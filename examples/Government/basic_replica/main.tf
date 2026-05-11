@@ -4,7 +4,7 @@
 # Terraform module for deploying a basic App Configuration with Replica Configuration in Azure. 
 
 module "mod_app_configuration" {
-  #source  = "github.com/POps-Rox/tf-az-overlays-appconfiguration"
+  #source  = "github.com/POps-Rox/terraform-az-overlays-appconfiguration"
   #version = "x.x.x"
   source = "../../.."
 

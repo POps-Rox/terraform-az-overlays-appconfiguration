@@ -1,10 +1,10 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: tf-az-overlays-appconfiguration
+  name: terraform-az-overlays-appconfiguration
   description: Terraform overlay module for Azure App Configuration
   annotations:
-    github.com/project-slug: POps-Rox/tf-az-overlays-appconfiguration
+    github.com/project-slug: POps-Rox/terraform-az-overlays-appconfiguration
     backstage.io/techdocs-ref: dir:.
   tags:
     - terraform
@@ -12,7 +12,7 @@ metadata:
     - azure
     - platform-ops
   links:
-    - url: https://github.com/POps-Rox/tf-az-overlays-appconfiguration
+    - url: https://github.com/POps-Rox/terraform-az-overlays-appconfiguration
       title: GitHub Repository
       icon: github
 spec:
