@@ -9,9 +9,3 @@ terraform {
     popsrox = { source = "POps-Rox/azutils", version = "~> 1.0" }
   }
 }
-
-# Azurerm provider configuration
-provider "azurerm" {
-  environment = var.environment
-  features {}
-}

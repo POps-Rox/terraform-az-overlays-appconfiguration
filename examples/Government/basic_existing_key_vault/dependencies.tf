@@ -25,10 +25,11 @@ resource "azurerm_key_vault" "app-config-kv" {
   sku_name                   = "standard"
   soft_delete_retention_days = 7
   purge_protection_enabled   = true
+  rbac_authorization_enabled = false
 }
 
 resource "azurerm_key_vault_access_policy" "server" {
-  key_vault_id = azurerm_key_vault.app-config.id
+  key_vault_id = azurerm_key_vault.app-config-kv.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
   object_id    = azurerm_user_assigned_identity.app-config-id.principal_id
 
@@ -37,7 +38,7 @@ resource "azurerm_key_vault_access_policy" "server" {
 }
 
 resource "azurerm_key_vault_access_policy" "client" {
-  key_vault_id = azurerm_key_vault.app-config.id
+  key_vault_id = azurerm_key_vault.app-config-kv.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
   object_id    = data.azurerm_client_config.current.object_id
 
@@ -47,7 +48,7 @@ resource "azurerm_key_vault_access_policy" "client" {
 
 resource "azurerm_key_vault_key" "app-config" {
   name         = "app-configKVkey"
-  key_vault_id = azurerm_key_vault.app-config.id
+  key_vault_id = azurerm_key_vault.app-config-kv.id
   key_type     = "RSA"
   key_size     = 2048
   key_opts = [
