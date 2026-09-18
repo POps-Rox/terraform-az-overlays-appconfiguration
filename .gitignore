@@ -76,6 +76,9 @@ override.tf.json
 #
 tests/**
 tests/**/terraform.tfvars
+!tests/
+!tests/*.tftest.hcl
+!tests/versions.tf
 test/go.sum
 
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan

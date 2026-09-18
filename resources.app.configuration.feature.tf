@@ -5,7 +5,7 @@
 # Azure App Configuration Key
 #---------------------------------------------------------------
 resource "azurerm_app_configuration_feature" "feature" {
-  for_each               = var.app_configuration_features
+  for_each               = var.app_configuration_features == null ? {} : var.app_configuration_features
   configuration_store_id = azurerm_app_configuration.app_configuration.id
   description            = each.value.description
   name                   = each.value.name
